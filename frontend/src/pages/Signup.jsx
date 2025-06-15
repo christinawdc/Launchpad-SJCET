@@ -195,7 +195,7 @@ const Signup = () => {
           </div>
           <div className="flex gap-3.5 justify-center w-full">
             <button
-              className={`flex-1 flex flex-col items-center justify-center gap-1.5 p-3.5 rounded-lg border-2 border-violet-300 bg-[#2d253a] text-white font-medium cursor-pointer text-lg transition-colors duration-200 ${googleHover ? 'bg-violet-300' : ''} font-poppins`}
+              className={`flex-1 flex flex-col items-center justify-center gap-1.5 p-3.5 rounded-lg border-2 border-black bg-[#2d253a] text-white font-medium cursor-pointer text-lg transition-colors duration-200 ${googleHover ? 'bg-violet-300 border-transparent' : ''} font-poppins`}
               onMouseEnter={() => setGoogleHover(true)}
               onMouseLeave={() => setGoogleHover(false)}
             >
@@ -207,7 +207,7 @@ const Signup = () => {
               />
             </button>
             <button
-              className={`flex-1 flex flex-col items-center justify-center gap-1.5 p-3.5 rounded-lg border-2 border-violet-300 bg-[#2d253a] text-white font-medium cursor-pointer text-lg transition-colors duration-200 ${appleHover ? 'bg-violet-300' : ''} font-poppins`}
+              className={`flex-1 flex flex-col items-center justify-center gap-1.5 p-3.5 rounded-lg border-2 border-black bg-[#2d253a] text-white font-medium cursor-pointer text-lg transition-colors duration-200 ${appleHover ? 'bg-violet-300 border-transparent' : ''} font-poppins`}
               onMouseEnter={() => setAppleHover(true)}
               onMouseLeave={() => setAppleHover(false)}
             >
