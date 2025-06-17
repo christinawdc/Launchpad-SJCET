@@ -43,7 +43,7 @@ const Home = () => {
           style={{ opacity: 3 }}
         >
           <h1
-            className="text-7xl md:text-8xl font-extrabold mb-6 text-[#1F3C04]"
+            className="text-7xl md:text-8xl font-bold font-poppins mb-6 text-[#1F3C04]"
             style={{ letterSpacing: "2px" }}
           >
             Discover . Connect
@@ -52,36 +52,39 @@ const Home = () => {
             Showing Projects and StartUps
           </p>
           <div className="flex flex-row gap-8 mt-4">
-            <button className="bg-green-200 text-black text-2xl px-10 py-3 rounded-xl font-medium hover:bg-green-300 transition-all">
-              Join Us
-            </button>
-            <button className="bg-green-200 text-black text-2xl px-10 py-3 rounded-xl font-medium hover:bg-green-300 transition-all">
-              Explore Projects
-            </button>
-          </div>
+  <button className="bg-[#DCFFB9A8] text-black text-2xl px-10 py-3 rounded-xl font-normal font-ponnala hover:bg-[#c4f5a2] transition-all duration-200 ease-in-out shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
+    Join Us
+  </button>
+  <button className="bg-[#DCFFB9A8] text-black text-2xl px-10 py-3 rounded-xl font-normal font-ponnala hover:bg-[#c4f5a2] transition-all duration-200 ease-in-out shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
+    Explore Projects
+  </button>
+</div>
+
         </div>
       </section>
 
-      {/* Featured Startups Section */}
+      {/* Featured Startups Section */
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-8">FEATURED STARTUPS</h2>
+          <h2 className="text-2xl font-medium mb-8 text-[#404638] font-poppins">FEATURED STARTUPS</h2>
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {startupData.map((item, idx) => (
               <StartUpCard
                 key={idx}
                 logo={item.logo}
                 description={item.description}
-              />
+             s />
             ))}
           </div>
         </div>
       </section>
+}
 
       {/* Featured Projects Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-8">FEATURED Projects</h2>
+          <h2 className="text-2xl font-medium mb-8 text-[#404638] font-poppins">FEATURED PROJECTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {projectData.map((item, idx) => (
               <ProjectCard
