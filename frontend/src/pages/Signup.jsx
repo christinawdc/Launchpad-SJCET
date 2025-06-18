@@ -89,15 +89,15 @@ const Signup = () => {
               required
             />
             <div className="relative mb-1">
-              <input
-                name="password"
+            <input
+              name="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter Password"
-                value={form.password}
-                onChange={handleChange}
+              value={form.password}
+              onChange={handleChange}
                 className="w-full p-3 rounded-md border-none bg-[#DBF0C3] text-black text-base placeholder-black focus:outline-none"
-                required
-              />
+              required
+            />
               <button
                 type="button"
                 onClick={() => setShowPassword((v) => !v)}
@@ -127,14 +127,14 @@ const Signup = () => {
             </div>
             <div className="flex items-start mb-4">
               <label className="checkbox-container flex items-center cursor-pointer select-none">
-                <input
+              <input
                   type="checkbox"
-                  name="terms"
-                  checked={form.terms}
-                  onChange={handleChange}
+                name="terms"
+                checked={form.terms}
+                onChange={handleChange}
                   className="hidden peer"
-                  required
-                />
+                required
+              />
                 <svg viewBox="0 0 64 64" height="1.25em" width="1.25em" className="ml-0 mr-2">
                   <path
                     d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
@@ -154,7 +154,7 @@ const Signup = () => {
                 </svg>
                 <span className="text-black text-[13px] font-poppins leading-tight">
                   I agree to the terms and conditions and privacy policy
-                </span>
+              </span>
               </label>
             </div>
             <button
