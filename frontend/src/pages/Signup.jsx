@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from "react";
-import sign1 from '../assets/sign1.png';
-import sign2 from '../assets/sign2.png';
-import sign3 from '../assets/sign3.png';
-import googleLogo from '../assets/google.png';
+import React, { useState } from "react";
+import automatedSVG from '../assets/automated-ai-model-testing-&-validation.svg';
 import appleLogo from '../assets/apple.png';
-import googleLogo1 from '../assets/google1.png';
-import appleLogo1 from '../assets/apple1.png';
-
-const images = [sign1, sign2, sign3];
-const quotes = [
-  '"Innovation distinguishes between a leader and a follower." - Steve Jobs',
-  '"What is now proved was once only imagined." - William Blake',
-  '"If you want something new, you have to stop doing something old." - Peter Drucker',
-];
+import googleLogo from '../assets/google.png';
+import githubLogo from '../assets/git.jpg';
+import facebookLogo from '../assets/face.png';
 
 const Signup = () => {
   const [form, setForm] = useState({
@@ -20,27 +11,9 @@ const Signup = () => {
     lastName: "",
     email: "",
     password: "",
-    confirmPassword: "",
     terms: false,
   });
-  const [currentImg, setCurrentImg] = useState(0);
-  const [prevImg, setPrevImg] = useState(0);
-  const [fade, setFade] = useState(false);
-  const [passwordError, setPasswordError] = useState("");
-  const [googleHover, setGoogleHover] = useState(false);
-  const [appleHover, setAppleHover] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPrevImg(currentImg);
-      setFade(true);
-      setTimeout(() => {
-        setCurrentImg((prev) => (prev + 1) % images.length);
-        setFade(false);
-      }, 800);
-    }, 10000);
-    return () => clearInterval(interval);
-  }, [currentImg]);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -50,179 +23,179 @@ const Signup = () => {
     }));
   };
 
-  const handleDotClick = (idx) => {
-    setCurrentImg(idx);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (form.password !== form.confirmPassword) {
-      setPasswordError("Passwords do not match");
-      return;
-    }
-    setPasswordError("");
+    // Add your submit logic here
     alert("Account created! (Demo)");
   };
 
   return (
-    <div className="w-screen h-screen bg-[#2d253a] flex items-start justify-center overflow-hidden gap-0 p-0 font-poppins">
-      <div className="flex-1 h-[calc(100vh-16px)] m-2 rounded-xl shadow-2xl overflow-hidden flex flex-col justify-between relative">
-        <div
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-800 z-0 ${fade ? 'opacity-100' : 'opacity-0'}`}
-          style={{ background: `url(${images[prevImg]}) center/cover no-repeat` }}
+    <div className="w-screen h-screen relative flex items-center justify-center font-poppins overflow-hidden bg-white">
+      {/* SVG Curved green background using provided SVG path */}
+      <svg
+        className="absolute top-0 left-0 w-full h-full z-0"
+        viewBox="0 0 1440 700"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        style={{ minWidth: '100vw', minHeight: '100vh' }}
+      >
+        <path
+          d="M 0,700 L 0,262 C 158.93333333333334,305.33333333333337 317.8666666666667,348.6666666666667 472,312 C 626.1333333333333,275.3333333333333 775.4666666666667,158.66666666666669 936,137 C 1096.5333333333333,115.33333333333333 1268.2666666666667,188.66666666666666 1440,262 L 1440,700 L 0,700 Z"
+          stroke="none"
+          strokeWidth="0"
+          fill="#E8F5DB"
+          fillOpacity="1"
         />
-        <div
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-800 z-0 ${fade ? 'opacity-0' : 'opacity-100'}`}
-          style={{ background: `url(${images[currentImg]}) center/cover no-repeat` }}
-        />
-        <div className="absolute top-0 left-0 w-full h-full bg-[#221b36]/55 z-10 rounded-xl" />
-        <div className="relative z-20 flex justify-between items-center px-6 pt-5">
-          <div className="font-bold text-3xl text-white tracking-wider font-sans rounded-lg px-4 py-1 bg-transparent">LOGO</div>
-          <a
-            href="/"
-            className="back-to-website-btn absolute top-4 right-4 flex items-center gap-1.5 bg-white/20 text-white rounded-full px-4 py-1.5 text-[15px] font-normal no-underline transition-colors duration-200 hover:bg-white/30"
-          >
-            Back to website
-            <span
-              className="arrow-animate inline-block ml-1 transition-transform duration-200 font-bold"
-              style={{ fontSize: 26, fontWeight: 700, lineHeight: 1 }}
-            >
-              &#8594;
-            </span>
-          </a>
+      </svg>
+      {/* Main content */}
+      <div className="relative z-10 flex w-full h-full items-center justify-center">
+        {/* Left Illustration */}
+        <div className="flex-1 flex items-center justify-center h-full">
+          <img src={automatedSVG} alt="Illustration" className="max-h-[420px] w-auto object-contain" />
         </div>
-        <style>{`
-          .back-to-website-btn:hover .arrow-animate {
-            transform: rotate(-60deg);
-          }
-        `}</style>
-        <div className="relative z-20 flex flex-col items-center justify-end mb-8">
-          <div className="text-white text-xl font-normal mb-3.5 text-center shadow-md min-h-[60px] max-w-[420px] px-4">
-            {quotes[currentImg]}
-          </div>
-          <div className="flex gap-2 justify-center items-center cursor-pointer">
-            {images.map((img, idx) => (
-              <span
-                key={img}
-                onClick={() => handleDotClick(idx)}
-                className={`inline-block transition-all duration-300 cursor-pointer rounded-md ${idx === currentImg ? 'w-[18px] h-[6px] bg-white opacity-90 border border-violet-300' : 'w-2 h-[6px] bg-white opacity-50'}`}
-              ></span>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="flex-1 h-[calc(100vh-48px)] m-6 bg-[#2d253a] rounded-xl shadow-xl p-8 flex flex-col justify-start items-stretch min-w-0">
-        <div>
-          <h1 className="text-white text-4xl mb-3">Create an account</h1>
-          <div className="text-gray-400 text-lg mb-6">
-            Already have an account? <a href="/login" className="text-violet-300">Log in</a>
+        {/* Signup Form Card */}
+        <div className="w-full max-w-[430px] bg-white rounded-2xl shadow-xl p-10 flex flex-col justify-center items-stretch min-h-[600px] mr-12">
+          <h1 className="text-black text-3xl font-bold mb-2">Create an account</h1>
+          <div className="text-[13px] text-black mb-6 font-medium">
+            Already have an account? <a href="/login" className="text-[#4F46E5]">Log in</a>
           </div>
           <form onSubmit={handleSubmit} autoComplete="off" className="w-full">
-            <div className="flex gap-3.5 mb-4">
+            <div className="flex gap-3 mb-4">
               <input
                 name="firstName"
-                placeholder="First name"
+                placeholder="First Name"
                 value={form.firstName}
                 onChange={handleChange}
-                className="w-1/2 p-4 rounded-lg border-none bg-[#231d36] text-white text-lg font-poppins"
+                className="w-1/2 p-3 rounded-md border-none bg-[#DBF0C3] text-black text-base placeholder-black focus:outline-none"
                 required
               />
               <input
                 name="lastName"
-                placeholder="Last name"
+                placeholder="Last Name"
                 value={form.lastName}
                 onChange={handleChange}
-                className="w-1/2 p-4 rounded-lg border-none bg-[#231d36] text-white text-lg font-poppins"
+                className="w-1/2 p-3 rounded-md border-none bg-[#DBF0C3] text-black text-base placeholder-black focus:outline-none"
                 required
               />
             </div>
             <input
               name="email"
               type="email"
-              placeholder="Email"
+              placeholder="College Mail"
               value={form.email}
               onChange={handleChange}
-              className="w-full p-4 rounded-lg border-none bg-[#231d36] text-white mb-4 text-lg font-poppins"
+              className="w-full p-3 rounded-md border-none bg-[#DBF0C3] text-black mb-4 text-base placeholder-black focus:outline-none"
               required
             />
-            <input
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              value={form.password}
-              onChange={handleChange}
-              className="w-full p-4 rounded-lg border-none bg-[#231d36] text-white mb-4 text-lg font-poppins"
-              required
-            />
-            <input
-              name="confirmPassword"
-              type="password"
-              placeholder="Confirm your password"
-              value={form.confirmPassword}
-              onChange={handleChange}
-              className="w-full p-4 rounded-lg border-none bg-[#231d36] text-white mb-4 text-lg font-poppins"
-              required
-            />
-            {passwordError && (
-              <div className="text-red-400 mb-2 text-base font-poppins">{passwordError}</div>
-            )}
-            <div className="flex items-center mb-4">
+            <div className="relative mb-1">
               <input
-                name="terms"
-                type="checkbox"
-                checked={form.terms}
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter Password"
+                value={form.password}
                 onChange={handleChange}
-                className="mr-3 w-4 h-4"
+                className="w-full p-3 rounded-md border-none bg-[#DBF0C3] text-black text-base placeholder-black focus:outline-none"
                 required
               />
-              <span className="text-gray-400 text-base font-poppins">
-                I agree to the <a href="#" className="text-violet-300">Terms & Conditions</a>
-              </span>
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                className="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-black rounded-e-md focus:outline-none"
+                tabIndex={0}
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                <svg className="shrink-0 w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {!showPassword ? (
+                    <>
+                      <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                      <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                      <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                      <line x1="2" x2="22" y1="2" y2="22"></line>
+                    </>
+                  ) : (
+                    <>
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </>
+                  )}
+                </svg>
+              </button>
+            </div>
+            <div className="flex justify-end mb-2">
+              <a href="#" className="text-[13px] text-black/70 hover:underline">Forgot Password?</a>
+            </div>
+            <div className="flex items-start mb-4">
+              <label className="checkbox-container flex items-center cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  name="terms"
+                  checked={form.terms}
+                  onChange={handleChange}
+                  className="hidden peer"
+                  required
+                />
+                <svg viewBox="0 0 64 64" height="1.25em" width="1.25em" className="ml-0 mr-2">
+                  <path
+                    d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16"
+                    pathLength="575.0541381835938"
+                    className="checkbox-path transition-all"
+                    style={{
+                      fill: "none",
+                      stroke: "#4ade80",
+                      strokeWidth: 6,
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      transition: "stroke-dasharray 0.5s cubic-bezier(.42,0,.58,1), stroke-dashoffset 0.5s cubic-bezier(.42,0,.58,1)",
+                      strokeDasharray: form.terms ? "70.51 9999999" : "241 9999999",
+                      strokeDashoffset: form.terms ? "-262.27" : "0"
+                    }}
+                  />
+                </svg>
+                <span className="text-black text-[13px] font-poppins leading-tight">
+                  I agree to the terms and conditions and privacy policy
+                </span>
+              </label>
             </div>
             <button
               type="submit"
-              className="w-full p-4 rounded-lg bg-violet-300 text-white font-semibold text-2xl mb-4 transition-colors duration-200 hover:bg-violet-400 font-poppins"
+              className="w-full p-3 rounded-md bg-black text-white font-semibold text-lg mb-4 transition-colors duration-200 hover:bg-gray-800 font-poppins"
             >
-              Create account
+              Create Account
             </button>
           </form>
-        </div>
-        <div>
           <div className="flex items-center my-4">
             <div className="flex-1 h-px bg-[#3a3350]" />
-            <span className="text-gray-400 text-base mx-4 whitespace-nowrap font-poppins">Or register with</span>
+            <span className="text-black text-[13px] mx-4 whitespace-nowrap font-poppins">or continue with</span>
             <div className="flex-1 h-px bg-[#3a3350]" />
           </div>
-          <div className="flex gap-3.5 justify-center w-full">
-            <button
-              className={`flex-1 flex flex-col items-center justify-center gap-1.5 p-3.5 rounded-lg border-2 border-black bg-[#2d253a] text-white font-medium cursor-pointer text-lg transition-colors duration-200 ${googleHover ? 'bg-violet-300 border-transparent' : ''} font-poppins`}
-              onMouseEnter={() => setGoogleHover(true)}
-              onMouseLeave={() => setGoogleHover(false)}
-            >
-              <img
-                src={googleHover ? googleLogo1 : googleLogo}
-                alt="Google"
-                className="w-10 h-10 block mx-auto object-contain"
-                style={googleHover ? { filter: 'brightness(0) invert(1)' } : {}}
-              />
+          <div className="flex gap-8 justify-center w-full mt-2">
+            {/* Google */}
+            <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
+              <img src={googleLogo} alt="Google" className="w-7 h-7 object-contain" />
             </button>
-            <button
-              className={`flex-1 flex flex-col items-center justify-center gap-1.5 p-3.5 rounded-lg border-2 border-black bg-[#2d253a] text-white font-medium cursor-pointer text-lg transition-colors duration-200 ${appleHover ? 'bg-violet-300 border-transparent' : ''} font-poppins`}
-              onMouseEnter={() => setAppleHover(true)}
-              onMouseLeave={() => setAppleHover(false)}
-            >
-              <img
-                src={appleHover ? appleLogo1 : appleLogo}
-                alt="Apple"
-                className="w-10 h-10 block mx-auto object-contain"
-                style={appleHover ? { filter: 'brightness(0) invert(1)' } : {}}
-              />
+            {/* Apple */}
+            <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
+              <img src={appleLogo} alt="Apple" className="w-7 h-7 object-contain" />
+            </button>
+            {/* GitHub */}
+            <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
+              <img src={githubLogo} alt="GitHub" className="w-7 h-7 object-contain" />
+            </button>
+            {/* Facebook */}
+            <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
+              <img src={facebookLogo} alt="Facebook" className="w-7 h-7 object-contain" />
             </button>
           </div>
         </div>
       </div>
+      <style>{`
+.checkbox-container input:focus + svg {
+  box-shadow: 0 0 0 2px #bbf7d0;
+}
+`}</style>
     </div>
   );
 };
 
-export default Signup; 
+export default Signup;
