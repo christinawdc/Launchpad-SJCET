@@ -32,10 +32,10 @@ const Home = () => {
 
       {/* Hero Section */}
       <section
-        className="w-full min-h-[70vh] flex flex-col items-center justify-center text-center relative"
+        className="w-full min-h-screen flex flex-col items-center justify-center text-center relative"
         style={{
           background:
-            "linear-gradient(158deg, rgba(220,230,210,0.00) 0%, rgba(129,255,4,0.84) 450%)",
+            "linear-gradient(44.85deg,  rgba(220, 230, 210, 0) 10%,rgba(180, 240, 120, 0.28) 50%,rgba(170, 230, 110, 0.45) 85%",
         }}
       >
         <div
@@ -48,7 +48,7 @@ const Home = () => {
           >
             Discover . Connect
           </h1>
-          <p className="text-[#aaada7] text-4xl mb-12 font-light">
+          <p className="text-[#aaada7] text-4xl mb-12 font-normal">
             Showing Projects and StartUps
           </p>
           <div className="flex flex-row gap-8 mt-4">
