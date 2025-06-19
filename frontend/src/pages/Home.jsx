@@ -123,7 +123,7 @@ const Home = () => {
       </h2>
 
       {/* Description */}
-      <p className="text-lg text-[#1F3C04] max-w-3xl mb-12 pl-8 text-left">
+      <p className="text-lg text-[#1F3C04] max-w-full mb-12 pl-8 pr-8 text-left">
         Welcome to CampusPilot, a collaborative platform built by and for the innovators of SJCET Palai. Our platform connects students and alumni to collaborate on projects and startups, driving innovation and entrepreneurship.
       </p>
 
