@@ -6,7 +6,7 @@ const StartUpCard = ({ logo = "LOGO" }) => {
     style={{
         border: "0.83px solid rgba(144, 146, 142, 0.5)"
       }}>
-      <div className="bg-[#E1FFD4] rounded-3xl w-full h-64 mx-2 mt-2"></div>
+      <div className="bg-[#E1FFD4] rounded-3xl w-full h-52 mx-2 mt-2"></div>
 
       <div className="w-full flex justify-center">
         <div className="bg-white rounded-2xl border border-gray-300 w-11/12 py-5 mt-4 mb-4 flex items-center justify-center text-2xl text-black shadow-sm">
