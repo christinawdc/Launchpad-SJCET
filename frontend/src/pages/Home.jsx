@@ -56,14 +56,14 @@ const Home = () => {
           >
             Discover . Connect
           </h1>
-          <p className="text-[#aaada7] text-5xl mb-12 font-normal">
+          <p className="text-[#aaada7] text-5xl mb-20 font-normal">
             Showing Projects and StartUps
           </p>
           <div className="flex flex-row gap-8 mt-4">
-  <button className="bg-[#DCFFB9A8] text-black text-2xl px-10 py-3 rounded-xl font-normal font-ponnala hover:bg-[#c4f5a2] transition-all duration-200 ease-in-out shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
+  <button className="bg-[#DCFFB9A8] text-black text-3xl px-12 py-3 rounded-xl font-normal font-ponnala hover:bg-[#c4f5a2] transition-all duration-200 ease-in-out shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
     Join Us
   </button>
-  <button className="bg-[#DCFFB9A8] text-black text-2xl px-10 py-3 rounded-xl font-normal font-ponnala hover:bg-[#c4f5a2] transition-all duration-200 ease-in-out shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
+  <button className="bg-[#DCFFB9A8] text-black text-3xl px-12 py-3 rounded-xl font-normal font-ponnala hover:bg-[#c4f5a2] transition-all duration-200 ease-in-out shadow-[0px_2px_4px_rgba(0,0,0,0.25)]">
     Explore Projects
   </button>
 </div>
