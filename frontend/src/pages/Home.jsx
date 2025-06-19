@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import StartUpCard from "../components/StartUpCard";
 import ProjectCard from "../components/ProjectCard";
+import AnnouncementsSection from "../components/AnnouncementsSection";
+import announcementIcon from "../assets/announcements-icon.svg";
+
 
 const startupData = [
   {
@@ -63,7 +66,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Startups Section */
+      {/* Featured Startups Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-medium mb-8 text-[#404638] font-poppins">FEATURED STARTUPS</h2>
@@ -74,12 +77,11 @@ const Home = () => {
                 key={idx}
                 logo={item.logo}
                 description={item.description}
-             s />
+          />
             ))}
           </div>
         </div>
       </section>
-}
 
       {/* Featured Projects Section */}
       <section className="py-16 px-4">
@@ -96,6 +98,10 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Announcements Section */}
+      <AnnouncementsSection />
+
     </div>
   );
 };
