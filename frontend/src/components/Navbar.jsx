@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white z-50 px-4 py-3">
+    <nav className="fixed top-0 left-0 w-full bg-white z-50 px-4 py-3 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="text-xl font-semibold">LOGO</Link>
         <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-8">

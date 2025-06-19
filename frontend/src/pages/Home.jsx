@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import StartUpCard from "../components/StartUpCard";
 import ProjectCard from "../components/ProjectCard";
 import AnnouncementsSection from "../components/AnnouncementsSection";
@@ -37,8 +36,6 @@ const projectData = [
 const Home = () => {
   return (
     <div className="min-h-screen bg-[#ffffff]">
-      <Navbar />
-
       {/* Hero Section */}
       <section
         className="w-full min-h-screen flex flex-col items-center justify-center text-center relative"
