@@ -48,7 +48,7 @@ const Home = () => {
           >
             Discover . Connect
           </h1>
-          <p className="text-[#aaada7] text-4xl mb-12 font-normal">
+          <p className="text-[#aaada7] text-5xl mb-12 font-normal">
             Showing Projects and StartUps
           </p>
           <div className="flex flex-row gap-8 mt-4">
@@ -66,7 +66,7 @@ const Home = () => {
       {/* Featured Startups Section */
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-medium mb-8 text-[#404638] font-poppins">FEATURED STARTUPS</h2>
+          <h2 className="text-3xl font-medium mb-8 text-[#404638] font-poppins">FEATURED STARTUPS</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {startupData.map((item, idx) => (
@@ -84,7 +84,7 @@ const Home = () => {
       {/* Featured Projects Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-medium mb-8 text-[#404638] font-poppins">FEATURED PROJECTS</h2>
+          <h2 className="text-3xl font-medium mb-8 text-[#404638] font-poppins">FEATURED PROJECTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {projectData.map((item, idx) => (
               <ProjectCard
