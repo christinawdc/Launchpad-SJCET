@@ -3,7 +3,12 @@ import Navbar from "../components/Navbar";
 import StartUpCard from "../components/StartUpCard";
 import ProjectCard from "../components/ProjectCard";
 import AnnouncementsSection from "../components/AnnouncementsSection";
-import announcementIcon from "../assets/announcements-icon.svg";
+import AboutCard from "../components/AboutCard";
+import aboutIcon from "../assets/about.svg";
+import contactIcon from "../assets/contactus.svg";
+import missionIcon from "../assets/ourmission.svg";
+import offerIcon from "../assets/whatweoffer.svg";
+
 
 
 const startupData = [
@@ -101,7 +106,49 @@ const Home = () => {
 
       {/* Announcements Section */}
       <AnnouncementsSection />
+      
+      {/* About Us Section */}
+      <section className="w-full bg-[#E1FFD4] py-16 px-4">
+      <div className="max-w-7xl mx-auto relative">
+        {/* About Us Icon */}
+      <img
+        src={aboutIcon}
+        alt="About Icon"
+        className="absolute left-0 top-0 w-8 h-8 translate-x-[-0.5rem] translate-y-[0.2rem]"
+      />
 
+      {/* Heading */}
+      <h2 className="text-3xl font-semibold font-poppins text-[#1F3C04] mb-4 pl-8">
+        About Us
+      </h2>
+
+      {/* Description */}
+      <p className="text-lg text-[#1F3C04] max-w-3xl mb-12 pl-8 text-left">
+        Welcome to CampusPilot, a collaborative platform built by and for the innovators of SJCET Palai. Our platform connects students and alumni to collaborate on projects and startups, driving innovation and entrepreneurship.
+      </p>
+
+      {/* Cards */}
+      <div className="space-y-6 pl-8">
+        <AboutCard
+      icon={missionIcon}
+      title="Our Mission"
+      text="To foster a culture of innovation and collaboration within the SJCET community."
+    />
+    <AboutCard
+      icon={offerIcon}
+      title="What We Offer"
+      text="A space to showcase ideas, find collaborators, and build startups together."
+    />
+    <AboutCard
+      icon={contactIcon}
+      title="Contact Us"
+      text="support@sjcet.acc.in"
+    />
+      </div>
+    </div>
+  </section>
+
+  
     </div>
   );
 };
