@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import automatedSVG from '../assets/automated-ai-model-testing-&-validation.svg';
 import appleLogo from '../assets/apple.png';
 import googleLogo from '../assets/google.png';
@@ -14,6 +15,7 @@ const Signup = () => {
     terms: false,
   });
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -25,13 +27,11 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your submit logic here
     alert("Account created! (Demo)");
   };
 
   return (
-    <div className="w-screen h-screen relative flex items-center justify-center font-poppins overflow-hidden bg-white">
-      {/* SVG Curved green background using provided SVG path */}
+    <div className="w-screen h-screen relative flex items-center justify-center font-poppins overflow-hidden" style={{ background: '#E8FDD8' }}>
       <svg
         className="absolute top-0 left-0 w-full h-full z-0"
         viewBox="0 0 1440 700"
@@ -48,17 +48,14 @@ const Signup = () => {
           fillOpacity="1"
         />
       </svg>
-      {/* Main content */}
       <div className="relative z-10 flex w-full h-full items-center justify-center">
-        {/* Left Illustration */}
         <div className="flex-1 flex items-center justify-center h-full">
           <img src={automatedSVG} alt="Illustration" className="max-h-[420px] w-auto object-contain" />
         </div>
-        {/* Signup Form Card */}
         <div className="w-full max-w-[430px] bg-white rounded-2xl shadow-xl p-10 flex flex-col justify-center items-stretch min-h-[600px] mr-12">
-          <h1 className="text-black text-3xl font-bold mb-2">Create an account</h1>
+          <h1 className="text-4xl font-extrabold mb-2 text-black">Create an account</h1>
           <div className="text-[13px] text-black mb-6 font-medium">
-            Already have an account? <a href="/login" className="text-[#4F46E5]">Log in</a>
+            Already have an account? <button onClick={() => navigate('/login')} className="text-[#4F46E5] bg-transparent border-none outline-none cursor-pointer">Log in</button>
           </div>
           <form onSubmit={handleSubmit} autoComplete="off" className="w-full">
             <div className="flex gap-3 mb-4">
@@ -170,19 +167,15 @@ const Signup = () => {
             <div className="flex-1 h-px bg-[#3a3350]" />
           </div>
           <div className="flex gap-8 justify-center w-full mt-2">
-            {/* Google */}
             <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
               <img src={googleLogo} alt="Google" className="w-7 h-7 object-contain" />
             </button>
-            {/* Apple */}
             <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
               <img src={appleLogo} alt="Apple" className="w-7 h-7 object-contain" />
             </button>
-            {/* GitHub */}
             <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
               <img src={githubLogo} alt="GitHub" className="w-7 h-7 object-contain" />
             </button>
-            {/* Facebook */}
             <button type="button" className="p-3 border-white rounded-full border hover:scale-110 transition-all hover:bg-[#E8F5DB] bg-white shadow-md">
               <img src={facebookLogo} alt="Facebook" className="w-7 h-7 object-contain" />
             </button>

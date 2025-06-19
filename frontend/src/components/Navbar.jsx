@@ -12,7 +12,7 @@ const Navbar = () => {
           <Link to="/projects" className="text-gray-600 hover:text-gray-900">Projects</Link>
           <Link to="/startups" className="text-gray-600 hover:text-gray-900">Announcements</Link>
           <Link to="/about" className="text-gray-600 hover:text-gray-900">About Us</Link>
-          <Link to="/signup" className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">SIGN IN</Link>
+          <Link to="/login" className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800">SIGN IN</Link>
         </div>
       </div>
     </nav>
