@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -17,7 +18,9 @@ export function ProfileCard() {
       </div>
 
       <div className="flex gap-2 pt-2">
-        <Button size="sm" variant="outline">View Profile</Button>
+        <Button size="sm" variant="outline">
+          View Profile
+        </Button>
         <Button size="sm">Connect</Button>
       </div>
     </Card>
