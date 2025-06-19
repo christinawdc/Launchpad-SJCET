@@ -45,7 +45,7 @@ const AnnouncementsSection = () => {
     <section className="w-full bg-white px-4 py-16">
       {/* Heading + Icon */}
       <div className="max-w-7xl mx-auto mb-8 flex items-center gap-4">
-        <h2 className="text-3xl font-semibold font-poppins text-[#1F3C04]">Announcements</h2>
+        <h2 className="text-5xl font-semibold font-poppins text-[#1F3C04]">Announcements</h2>
          <img src={announcementIcon} alt="Announcements" className="w-8 h-8" />
       </div>
 
@@ -54,7 +54,7 @@ const AnnouncementsSection = () => {
         {["All", "Events", "Updates", "Deadlines"].map((filter, idx) => (
           <button
             key={idx}
-            className="bg-[#f0f0f0] text-[#1F3C04] rounded-full px-5 py-2 text-sm font-medium hover:bg-[#e0e0e0] transition"
+            className="bg-[#f0f0f0] text-[#1F3C04] rounded-full px-9 py-2 text-base font-medium hover:bg-[#e0e0e0] transition"
           >
             {filter}
           </button>
