@@ -6,11 +6,12 @@ import StartUps from "./pages/StartUps";
 import ConnectPage from "./pages/ConnectPage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profiles" element={<Profiles />} />
@@ -21,7 +22,6 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
-    
   );
 }
 
