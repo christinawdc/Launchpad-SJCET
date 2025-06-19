@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import StartUpCard from "../components/StartUpCard";
 import ProjectCard from "../components/ProjectCard";
@@ -52,9 +53,11 @@ const Home = () => {
             Showing Projects and StartUps
           </p>
           <div className="flex flex-row gap-8 mt-4">
-            <button className="bg-green-200 text-black text-2xl px-10 py-3 rounded-xl font-medium hover:bg-green-300 transition-all">
-              Join Us
-            </button>
+            <Link to="/signup">
+              <button className="bg-green-200 text-black text-2xl px-10 py-3 rounded-xl font-medium hover:bg-green-300 transition-all">
+                Join Us
+              </button>
+            </Link>
             <button className="bg-green-200 text-black text-2xl px-10 py-3 rounded-xl font-medium hover:bg-green-300 transition-all">
               Explore Projects
             </button>
